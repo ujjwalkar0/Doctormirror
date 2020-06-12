@@ -1,0 +1,25 @@
+
+    '''
+    if request.method == 'POST':
+        fever=request.POST['fever']
+        dry_cough=request.POST['dry_cough']
+        fatigue=request.POST['fatigue']
+        sputum_production=request.POST['sputum_production']
+        shortness_of_breath=request.POST['shortness_of_breath']
+        mussle_or_joint_pain=request.POST['mussle_or_joint_pain']
+        sore_throat=request.POST['sore_throat']
+        headache=request.POST['headache']
+        chills=request.POST['chills']
+        nausea_or_vomiting=request.POST['nausea_or_vomiting']
+        nasal_congestion=request.POST['nasal_congestion']
+        diarrhoea=request.POST['diarrhoea']
+        others=request.POST['others']
+
+        patient_details=patients(fever= fever,dry_cough = dry_cough,fatigue = fatigue,sputum_production = sputum_production, shortness_of_breath = shortness_of_breath, mussle_or_joint_pain = mussle_or_joint_pain,sore_throat = sore_throat,headache = headache,chills = chills,nausea_or_vomiting = nausea_or_vomiting,nasal_congestion = nasal_congestion,diarrhoea = diarrhoea,others = others)
+        
+        patient_details.save()
+
+        return render(request, "patient")
+    else:
+        return render(request, "patient.html")
+        '''

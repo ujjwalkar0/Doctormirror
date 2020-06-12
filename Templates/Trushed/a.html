@@ -1,0 +1,85 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>{% block title %}Welcome to DoctorMirror{% endblock %}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}" >
+      <link rel="stylesheet" type="text/css" href="{% static 'Bootstrap/css/bootstrap.min.css' %}" >
+      <script src="{% static 'Bootstrap/jquery.min.js' %}" ></script>
+      <script type="text/javascript" src="{% static 'Bootstrap/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'Javascript/theme.js' %}"></script>   
+      <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+<body>
+
+<div class="container">
+  <h2>Dropdown Split Buttons</h2>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+    </div>
+  </div>
+  
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

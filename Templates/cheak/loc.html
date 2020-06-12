@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<button onclick="getLocation()">Click Here to Get value of a and b </button>
+
+<p id="demo"></p>
+<form action="locations" method="post">{% csrf_token %}
+  <input type="hidden" id="fname" name="username" value={{user.get_username}} readonly><br><br>
+  <label for="fname">a:</label>
+  <input type="text" id="fname" name="Latitude" required><br><br>
+  <label for="lname">b:</label>
+  <input type="text" id="lname" name="Longitude" required><br><br>
+  You are a :
+  <input type="submit" name="catagory"value="Doctor">
+  <input type="submit" name="catagory"value="Nurse">
+  <input type="submit" name="catagory"value="Hospital">
+  <input type="submit" name="catagory"value="Ambulance">
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Write this on Those inputbox, <br><br> a= " + position.coords.latitude + 
+  "<br>b= " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500')!important;
+*{
+  padding: 0!important;
+  margin: 0!important;
+  list-style: none!important;
+  text-decoration: none!important;
+}
+body {
+  font-family: 'Roboto', sans-serif!important;
+}
+.sidebar {
+  position: fixed!important;
+  left: -250px!important;
+  width: 250px!important;
+  height: 100%!important;
+  background: #042331!important;
+  transition: all .5s ease!important;
+}
+.sidebar header {
+  font-size: 22px!important;
+  color: white!important;
+  line-height: 70px!important;
+  text-align: center!important;
+  background: #063146!important;
+  user-select: none!important;
+}
+.sidebar ul a{
+  display: block!important;
+  height: 100%!important;
+  width: 100%!important;
+  line-height: 65px!important;
+  font-size: 20px!important;
+  color: white!important;
+  padding-left: 40px!important;
+  box-sizing: border-box!important;
+  border-bottom: 1px solid black!important;
+  border-top: 1px solid rgba(255,255,255,.1)!important;
+  transition: .4s!important;
+}
+ul li:hover a{
+  padding-left: 50px!important;
+}
+.sidebar ul a i{
+  margin-right: 16px!important;
+}
+#check{
+  display: none!important;
+}
+label #btn,label #cancel{
+  position: absolute!important;
+  background: #042331!important;
+  border-radius: 3px!important;
+  cursor: pointer!important;
+}
+label #btn{
+  left: 40px!important;
+  top: 25px!important;
+  font-size: 35px!important;
+  color: white!important;
+  padding: 6px 12px!important;
+  transition: all .5s!important;
+}
+label #cancel{
+  z-index: 1111!important;
+  left: -195px!important;
+  top: 17px!important;
+  font-size: 30px!important;
+  color: #0a5275!important;
+  padding: 4px 9px!important;
+  transition: all .5s ease!important;
+}
+#check:checked ~ .sidebar{
+  left: 0!important;
+}
+#check:checked ~ label #btn{
+  left: 250px!important;
+  opacity: 0!important;
+  pointer-events: none!important;
+}
+#check:checked ~ label #cancel{
+  left: 195px!important;
+}
+#check:checked ~ section{
+  margin-left: 250px!important;
+}
+section{
+  background: url(bg.jpeg) no-repeat!important;
+  background-position: center!important;
+  background-size: cover!important;
+  height: 100vh!important;
+  transition: all .5s!important;
+}

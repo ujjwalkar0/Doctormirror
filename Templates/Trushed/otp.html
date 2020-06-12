@@ -1,0 +1,32 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>Welcome to DoctorMirror</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css"
+      href="{% static 'css/style.css' %}" >
+     <link rel="stylesheet" type="text/css" href="{% static 'Bootstrap/css/bootstrap.min.css' %}" >
+      <script type="text/javascript" src="{% static 'Bootstrap/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'Bootstrap/jquery.min.js' %}" ></script>
+  </head>
+  <body class="text-center">
+
+<!-------------------------------------------OTP------------------------------------------------------------>
+
+    <form action="otp" method="post"class="form-signin" id="signup">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 font-weight-normal">Enter Otp send to your Email</h1>
+        <input type="text" id="inputEmail" class="form-control" name="otp" placeholder="Enter Otp send to your Email" required autofocus ><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button><br>
+    <div>
+    {% for message in messages %}
+    <h3> {{message}} </h3>
+    {% endfor %}
+    </div>
+
+    </form>
+
+</body>
+</html>
