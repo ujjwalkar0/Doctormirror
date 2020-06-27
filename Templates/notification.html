@@ -1,0 +1,138 @@
+{% extends "home.html" %}
+
+{% block title %} Notification {% endblock %}
+
+{% block content %}
+
+<!---------------------------------: Content :---------------------------------------------------------->
+
+{% for i in notifications reversed%}
+{% if i.sendid == user.get_username %}
+{% if i.Payment_Proof %}
+<div class="alert alert-primary" role="alert">
+ Patient's Id : {{i.username}} <br>
+ Patient's Name : {{i.patient_name}}<br>
+ Patient's Age : {{i.age}} <br>
+ Patient's Address : {{i.Address}} <br>
+ <h6 class="w3-center"> Patient Problem </h6>
+{% if i.fever %} Fever <br>{% endif %} 
+{% if i.dry_cough %} Dry Cough <br>{% endif %} 
+{% if i.fatigue %} fatigue <br>{% endif %} 
+{% if i.sputum_production %} sputum_production <br>{% endif %} 
+{% if i.shortness_of_breath %} shortness_of_breath <br>{% endif %} 
+{% if i.mussle_or_joint_pain %} mussle_or_joint_pain <br>{% endif %} 
+{% if i.mussle_or_joint_pain %} mussle_or_joint_pain <br>{% endif %} 
+{% if i.headache %} headache <br>{% endif %} 
+{% if i.chills %} chills <br>{% endif %} 
+{% if i.nausea_or_vomiting %} nausea_or_vomiting <br>{% endif %} 
+{% if i.nasal_congestion %} nasal_congestion <br>{% endif %} 
+{% if i.diarrhoea %} diarrhoea <br>{% endif %} 
+{% if i.others %} others <br>{% endif %}
+{% if i.File %} <br> <a class="w3-button w3-center w3-green" href="/media/{{i.File}}"> Attatched Docunment </a> <br>{% endif %} 
+
+{% if i.Payment_Proof %} <br> <a class="w3-button w3-center w3-green" href="/media/{{i.Payment_Proof}}"> Payment Proof </a> <br>{% endif %} 
+
+
+<div class="form-group">
+<form action="notification" method="post">
+{% csrf_token %}
+  <input type="text" id="id_patient_id" name="patient_id" value="{{i.username}}" hidden><br>
+  <input type="text" id="id_doctor_id" name="doctor_id" value="{{user.get_username}}" hidden><br>
+  <input type="text" class="form-control" id="id_messages" name="abc" placeholder=" Write his/her prescription "><br>
+<input type="submit" class="pw w3-blue w3-button" name="response" value="Send"></button>
+</form>
+<style>
+.pw{
+    margin:3px;
+}
+</style>
+</div></div>
+{% else %}
+<div class="alert alert-warning" role="alert">
+ Patient's Id : {{i.username}} <br>
+ Patient's Name : {{i.patient_name}}<br>
+ Patient's Age : {{i.age}} <br>
+ Patient's Address : {{i.Address}} <br>
+ <h6 class="w3-center"> Patient Problem </h6>
+{% if i.fever %} Fever <br>{% endif %} 
+{% if i.dry_cough %} Dry Cough <br>{% endif %} 
+{% if i.fatigue %} fatigue <br>{% endif %} 
+{% if i.sputum_production %} sputum_production <br>{% endif %} 
+{% if i.shortness_of_breath %} shortness_of_breath <br>{% endif %} 
+{% if i.mussle_or_joint_pain %} mussle_or_joint_pain <br>{% endif %} 
+{% if i.mussle_or_joint_pain %} mussle_or_joint_pain <br>{% endif %} 
+{% if i.headache %} headache <br>{% endif %} 
+{% if i.chills %} chills <br>{% endif %} 
+{% if i.nausea_or_vomiting %} nausea_or_vomiting <br>{% endif %} 
+{% if i.nasal_congestion %} nasal_congestion <br>{% endif %} 
+{% if i.diarrhoea %} diarrhoea <br>{% endif %} 
+{% if i.others %} others <br>{% endif %}
+{% if i.File %} <br> <a class="w3-button w3-center w3-green" href="/media/{{i.File}}"> Attatched Docunment </a> <br>{% endif %} 
+<div class="form-group">
+<form action="notification" method="post">
+{% csrf_token %}
+  <input type="text" id="id_patient_id" name="patient_id" value="{{i.username}}" hidden><br>
+  <input type="text" id="id_doctor_id" name="doctor_id" value="{{user.get_username}}" hidden><br>
+  <input type="text" class="form-control" id="id_messages" name="abc" placeholder="Convert Payment QR Code to link and Paste it here "><br>
+<input type="submit" class="pw w3-blue w3-button" name="response" value="Accept for Online Treatment"></button>
+<input type="submit" class="pw w3-blue w3-button" name="response" value="Take in Chamber"></button>
+<input type="submit" class="pw w3-blue w3-button" name="response" value="Reject"></button>
+</form>
+<style>
+.pw{
+    margin:3px;
+}
+</style>
+</div></div>
+
+{% endif %}
+{% endif %}
+{% endfor %}
+
+
+{% for i in some reversed %}
+{% if i.patient_id == user.get_username %}
+<div class="container">
+<div class="toast" style="width:35 rem;" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">{{i.doctor_id}}</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    
+    {% if i.response == "Take in Chamber" %}
+    <div class="toast-body" style="background-color:#87c1ff;">
+    Doctor Accepts to Treatment You, and Request You to Take the Patient in His Chamber 
+    </div>
+      {% endif %}
+      {% if i.response == "Accept for Online Treatment" %}
+    <div class="toast-body" style="background-color:#a1ff5e;">
+    Doctor Accepts to Treatment You in Online, So <a href="{{i.abc}}">PAY HIM</a> Online with this QR Code, and Go to homepaage and Re-enter Your Problems with payment proof. Thaank You 
+     </div> 
+      {% endif %}
+      {% if i.response == "Reject" %}
+    <div class="toast-body" style="background-color:#ff9b80;">
+    Sorry, Doctor Rejects Your Request
+        </div>
+      {% endif %}
+
+{% if i.response == " Send " %}
+    <div class="toast-body" style="background-color:#fffa66;">
+    Doctor's prescription :- <br><br>
+    {{i.abc}}
+        </div>
+      {% endif %}
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+</script>
+
+{% endif %}
+{% endfor %}
+
+   {% endblock content %}
+<!----------------------------------------: Content Finish :------------------------------------------>

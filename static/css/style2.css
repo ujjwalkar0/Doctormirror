@@ -258,6 +258,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .dm_desktop_margin{
     margin: 40px;
   }
+  .dm-width{
+    width: 25rem;
+  }
 
 }
 @media (min-width:1201px){ /*  PC  */
@@ -266,6 +269,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
   .dm-container{
     display:none;
+  }
+  .dm-width{
+    width: 35rem;
   }
   .dm-cont-pc{
     display: none;

@@ -1,0 +1,104 @@
+{% extends "home.html" %}
+
+{% block title %} Find Doctor {% endblock %}
+
+{% block content %}
+<!---------------------------------: Content :---------------------------------------------------------->
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+<h2>Doctors...</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter Your Address">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">Doctor's Id</th>
+    <th style="width:20%;">Address</th>
+    <th style="width:5%;">Specialist</th>
+    <th style="width:5%;">Qualifications</th>
+    <th style="width:5%;">Exper<br>ience<br>(yrs.)</th>
+    <th style="width:5%;">Fees</th>
+
+
+  </tr>
+  {% for i in obj_list %}
+  <tr>
+    <td>{{i.username}}</td>
+    <td>
+    {{i.Hospital_or_Chamber_Address_1}}
+    {% if i.Hospital_or_Chamber_Address_2 %} <br><hr> {{Hospital_or_Chamber_Address_2}} {% endif %}
+    {% if i.Hospital_or_Chamber_Address_3 %} <br><hr> {{Hospital_or_Chamber_Address_3}} {% endif %}
+    {% if i.Hospital_or_Chamber_Address_4 %} <br><hr> {{Hospital_or_Chamber_Address_4}} {% endif %}
+    {% if i.Hospital_or_Chamber_Address_5 %} <br><hr> {{Hospital_or_Chamber_Address_5}} {% endif %}
+    </td>
+    <td>{{i.Specialist_of}}</td>
+    <td>{{i.Degrees}}
+    <td>{{i.Experience}}</td>
+    <td>{{i.Fees}}</td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+<!----------------------------------------: Content Finish :------------------------------------------>
+{% endblock content %}

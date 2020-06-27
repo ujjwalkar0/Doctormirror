@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-from .models import problems,usercatagory,ambulances,doctors,nurses,hospital,location
-from .forms import ProblemsForm,Patients,Doctor,Nurse,Ambulance,Hospital
+from .models import doctorresponse,problems,usercatagory,ambulances,location,doctors,file2links,nurses,hospital,chats
+from .forms import ProblemsForm,Patients,Doctor,Nurse,Ambulance,Hospital,file2link,chat
 
-# Create your views here.
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -64,33 +63,20 @@ def home(request):
         form.save()
         form = ProblemsForm()
     context = {
-        'form': form
+        'form': form,
+        'notifications': problems.objects.all(),
     }
     return render(request, "home.html", context)
-'''
-def create_profile(request):
-    return render(request, "cuseas.html")
-def view_profile(request):
-    return render(request, "vuseas.html")
-def edit_profile(request):
-    return render(request, "euseas.html")
-def usingas(request):
-    context={
-        "datas":usercatagory.objects.all()
-    }
-    return render(request,'a.html',context)
-def home(request):
-    return render(request,'home.html')
-'''
+
 def doctor(request):
     form = Doctor(request.POST,request.FILES)
     if form.is_valid():
+        print(form)
         form.save()
         form = Doctor()
     context = {
         'obj_list': doctors.objects.all(),
         'form': form,
-
     }
     return render(request,'Doctor.html',context)
 def nurse(request):
@@ -99,7 +85,6 @@ def nurse(request):
         form.save()
         form = Nurse()
     context = {
-        'obj_list': nurses.objects.all(),
         'form': form
     }
     return render(request,'Nurse.html',context)
@@ -113,39 +98,79 @@ def ambulance(request):
         'form': form,
         
     }
+
     return render(request,'ambulance.html',context)
-
-def add(request):
-    form = Ambulance(request.POST,request.FILES)
-    if form.is_valid():
-        form.save()
-        form = Ambulance()
-    context = {
-        'obj_list': ambulances.objects.all(),
-        'form': form,
-        
-    }
-    return render(request,'add.html',context)
-
 def hospitals(request):
     form = Hospital(request.POST,request.FILES)
     if form.is_valid():
         form.save()
         form = Hospital()
     context = {
-        'obj_list': hospital.objects.all(),
         'form': form
     }
     return render(request,'hospital.html',context)
 
+def profile(request):
+    context = {
+        'doctor': doctors.objects.all(),
+        'ambulances': ambulances.objects.all(),
+        'nurses': nurses.objects.all(),
+        'hospitals': hospital.objects.all(),
+
+    }
+    return render(request,'profile.html',context)
+
+def chatting(request):
+    form = chat(request.POST,request.FILES)
+    if form.is_valid():
+        form.save()
+        form = chat()
+    context = {
+        'files': chats.objects.all(),
+        'form': form
+    }
+    return render(request,'chats.html',context)
+
+
+def files2links(request):
+    form = file2link(request.POST,request.FILES)
+    if form.is_valid():
+        form.save()
+        form = file2link()
+    context = {
+        'files': file2links.objects.all(),
+        'form': form
+    }
+    return render(request,'file2links.html',context)
+
 def locations(request):
+    context = {
+        'obj_list': doctors.objects.all(),
+    }
+    return render(request,'cheak/loc.html',context)
+def finddoctor(request):
+    context = {
+        'obj_list': doctors.objects.all(),
+    }
+    return render(request,'cheak/doctors.html',context)
+
+def notification(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        catagory = request.POST['catagory']
-        Latitude = request.POST['Latitude']
-        Longitude = request.POST['Longitude']
-        loc = location.objects.create(username=username,catagory=catagory,Latitude=Latitude,Longitude=Longitude)
-        loc.save()
-        return render(request,'cheak/loc.html')
+        patient_id = request.POST['patient_id']
+        doctor_id = request.POST['doctor_id']
+        abc = request.POST['abc']
+        response = request.POST['response']
+        myresponse = doctorresponse.objects.create(patient_id=patient_id,doctor_id=doctor_id,abc=abc,response=response)
+        myresponse.save()
+       
+        context = {
+        'notifications': problems.objects.all(),
+        'some':doctorresponse.objects.all(),
+        }
+        return render(request, "notification.html", context)
     else:
-        return render(request,'cheak/loc.html')
+        context = {
+        'notifications': problems.objects.all(),
+        'some':doctorresponse.objects.all(),
+        }
+        return render(request, "notification.html", context)

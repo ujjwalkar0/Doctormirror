@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+<!---------------------------------: Content :---------------------------------------------------------->
+  {% block content %}
+<form action="files2links" method='POST' enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p}}
+<button type="submit" class="w3-button w3-blue" name="username" value ="{{user.get_username}}">Submit</button>
+</form>
+<br><br>
+<input class="form-control" type="text" value="Previously Coverted Links" readonly><br>
+{% for i in files reversed %}
+{% if i.username == user.get_username %}
+<a href="media/{{i.Upload_File}}">media/{{i.Upload_File}}</a> <br>
+{% endif %}
+{% endfor %}
+   {% endblock content %}
+<!----------------------------------------: Content Finish :------------------------------------------>

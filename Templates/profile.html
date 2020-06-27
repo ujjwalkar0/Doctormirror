@@ -5,6 +5,104 @@
 {% block content %}
 
 
+{% for i in doctor %}
+ {% if user.get_username == i.username %}
+
+<div class="card" style="max-width: 30rem;">
+  <img class="card-img-top" src="/media/{{i.Upload_Profile_Pic }}" alt="img.jpg">
+  <div class="card-body ">
+    <h6 class="card-title"><span style="color:green">Doctor's Name :</span ><span style="color:blue"> {{ user.get_full_name }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Passing From College :</span ><span style="color:blue"> {{ i.collage }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Passing From university:</span ><span style="color:blue"> {{ i.university }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Passing Year:</span ><span style="color:blue"> {{ i.Passing_Year }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Degrees:</span ><span style="color:blue"> {{ i.Degrees }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Experience</span ><span style="color:blue"> {{ i.Experience }}</span ></h6>
+    {% if Hospital_or_Chamber_Address_2%}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 1</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_1 }}</span ></h6>
+    {% else %}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_1 }}</span ></h6>
+    {% endif %}
+
+    {% if Hospital_or_Chamber_Address_2%}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 2</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_2 }}</span ></h6>
+    {% endif %}
+
+    {% if Hospital_or_Chamber_Address_3%}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 3</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_3 }}</span ></h6>
+    {% endif %}
+
+    {% if Hospital_or_Chamber_Address_4 %}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 4</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_4 }}</span ></h6>
+    {% endif %}
+
+    {% if Hospital_or_Chamber_Address_5 %}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 5</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_5 }}</span ></h6>
+    {% endif %}
+    <h6 class="card-title"><span style="color:green">Specialist of</span ><span style="color:blue"> {{ i.Specialist_of }}</span ></h6>
+    <br><a href="#" class="btn btn-primary w3-right">Edit</a>
+    </div>
+    </div>
+{% endif %}
+{% endfor %}
+
+
+{% for i in doctor %}
+ {% if user.get_username == i.username %}
+
+<div class="card" style="max-width: 30rem;">
+  <img class="card-img-top" src="/media/{{i.Upload_Profile_Pic }}" alt="img.jpg">
+  <div class="card-body ">
+    <h6 class="card-title"><span style="color:green">Nurse's Name :</span ><span style="color:blue"> {{ user.get_full_name }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Passing From College :</span ><span style="color:blue"> {{ i.collage }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Passing From university:</span ><span style="color:blue"> {{ i.university }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Passing Year:</span ><span style="color:blue"> {{ i.Passing_Year }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Degrees:</span ><span style="color:blue"> {{ i.Degrees }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Experience</span ><span style="color:blue"> {{ i.Experience }}</span ></h6>
+    {% if Hospital_or_Chamber_Address_2%}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 1</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_1 }}</span ></h6>
+    {% else %}
+    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_1 }}</span ></h6>
+    {% endif %}
+
+    </div>
+    </div>
+{% endif %}
+{% endfor %}
+
+
+<!----------------------------: Ammbulance :---------------------------->
+
+{% for i in ambulances %}
+ {% if user.get_username == i.username %}
+<div class="card" style="max-width: 30rem;">
+  <img class="card-img-top" src="{{i.Upload_Ambulance_Pic.image.url }}" alt="img.jpg">
+  <div class="card-body w3-center">
+    <h6 class="card-title"><span style="color:green">Driver's Name :</span ><span style="color:blue"> {{ i.Driver_name }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Ambulances Number :</span ><span style="color:blue"> {{ i.Ambulances_Number }}</span ></h6>
+    <h6 class="card-title"><span style="color:green">Hospital Belongs to :</span ><span style="color:blue"> {{ i.Hospital_Belongs_to }}</span ></h6>
+    <h5 class="card-title"><span style="color:#296356">Facilities</span ></h5>
+{% if i.Bed_to_Bed_Transfer_Facility == True%}
+Bed to Bed Transfer Facility at Affordable Rent
+{% elif i.emergency_online_support_team == True%}
+24X7 emergency online tech-support team: 
+{% elif i.Special_care_teams_and_physicians == True%}
+Special care teams and physicians with the patient as well as special care of patients with ICU: 
+{% elif i.Transfer_the_patient_under_doctors == True%}
+Transfer the patient under the supervision of specialized doctors and health care specialists: 
+{% elif i.Both_side_road_ambulances == True%}
+Both side road ambulances to pick up and drop off the patient: 
+{% endif %}
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Edit</a>
+  </div>
+</div>
+
+ {% endif %}
+{% endfor %}
+
+
+
+
 
 
 

@@ -36,7 +36,7 @@
       <h5>{{User.get_username}}</h5>
 
       <div class="w3-section">
-        <button class="w3-button w3-green">Create Profile</button>
+        <a href="profile"><button class="w3-button w3-green">Profile</button></a>
         <a href="logout"><button class="w3-button w3-red">logout</button></a>
 
       </div>
@@ -71,15 +71,28 @@ function myFunction() {
       <h5>{{User.get_username}}</h5>
 
       <div class="w3-section">
-        <button class="w3-button w3-green">Create Profile</button>
-        <button class="w3-button w3-green">View Profile</button>
-        <button class="w3-button w3-blue">Edit Profile</button> <br><br>
+        <a href="profile"><button class="w3-button w3-green">Create Profile</button>
         <a href="logout"><button class="w3-button w3-red">logout</button></a>
 
       </div>
     </div>
 
 <a href="/" class="a w3-bar-item w3-button btn"><i class="i fas fa-home"></i> Home </a>
+
+
+
+<button class="a `w3-button w3-block w3-left-align btn" onclick="myAccFunc1()">
+<i class="i fas fa-eye"></i>
+        Looking for a.... <i class="i fa fa-caret-down"></i>
+  </button>
+  <div id="demoAcc1" class="w3-hide w3-white w3-card">
+    <a href="finddoctor" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-md"></i>Doctor</a>
+    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-nurse"></i>Nurse</a>
+    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-ambulance"></i>Ambulance</a>
+    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-hospital"></i>Hospital</a>
+
+  </div>
+
 
 <button class="a `w3-button w3-block w3-left-align btn" onclick="myAccFunc()">
 <i class="i fas fa-users-cog"></i>
@@ -88,14 +101,19 @@ function myFunction() {
   <div id="demoAcc" class="w3-hide w3-white w3-card">
     <a href="patients" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-procedures"></i>Patients</a>
     <a href="doctor" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-md"></i>Doctor</a>
-    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-nurse"></i>Nurse</a>
-    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-ambulance"></i>Ambulance</a>
-    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-hospital"></i>Hospital</a>
+    <a href="nurse" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-nurse"></i>Nurse</a>
+    <a href="ambulance" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-ambulance"></i>Ambulance</a>
+    <a href="hospitals" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-hospital"></i>Hospital</a>
 
   </div>
 
 
+  <a href="notification" class="a w3-bar-item w3-button btn"><i class="i fas fa-bell"></i> Notification </a>
+  <a href="chatting" class="a w3-bar-item w3-button btn"><i class="i far fa-comments"></i> Chats </a>
+  <a href="files2links" class="a w3-bar-item w3-button btn"><i class="i fas fa-link"></i> Convert File to Links </a>
+
   <a href="#" class="a w3-bar-item w3-button btn"><i class="i fas fa-id-card"></i> Contact Information </a>
+
   <a href="#" class="a w3-bar-item w3-button btn"><i class="i fas fa-atlas"></i> About </a>
 </div>
 
@@ -113,19 +131,20 @@ function myFunction() {
 <div class ="dm_desktop_margin">
 <!---------------------------------: Content :---------------------------------------------------------->
   {% block content %}
-<h4 style="color:blue;">Mark Your Problems</h4>
+
+<h4 style="color:blue;">Fill Your Details and Mark Your Problems</h4>
 <br>
 
 <form action="/" method='POST' enctype="multipart/form-data">
 {% csrf_token %}
-{{ form.as_ul}}
+{{ form.as_p}}
 
 <button type="submit" class="w3-button w3-blue" name="username" value ="{{user.get_username}}">Submit</button>
 
 </form>
+</p>
 
-
-   {% endblock content %}
+{% endblock content %}
 <!----------------------------------------: Content Finish :------------------------------------------>
 </div>
    

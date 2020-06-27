@@ -1,116 +1,8 @@
-{% load static %}
+{% extends "home.html" %}
 
-<!doctype html>
-<html lang="en">
-  <head>
-      <title>DoctorMirror || Doctor</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}" >
-      <link rel="stylesheet" type="text/css" href="{% static 'Bootstrap/css/bootstrap.min.css' %}" >
-      <script src="{% static 'Bootstrap/js/jquery.min.js' %}" ></script>
-      <script src="{% static 'Bootstrap/js/proper.min.js' %}" ></script>
-      <script src="{% static 'Bootstrap/js/bootstrap.min.js' %}"></script>
-      <script src="{% static 'Javascript/theme.js' %}"></script>   
-      <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-      <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %} Profile {% endblock %}
 
-  </head>
-
-<!------------------------------------------: Cheak if loged in :-------------------------------------->    
-
-{% if user.is_authenticated %}
-
-<!-----------------------------------------: Home :-------------------------->
-<div style=" position : fixed; width:100%; ">
-    <div class="w3-container w3-center dm-cont-mob" style="background-color:#0989df;">
-    <h1 class="dm-pc-h1">DoctorMirror</h1></div>
-  <div class="w3-right dm-profile dm-cont-mob">
-  <div class="w3-dropdown-click dm-dropdown-menu-center">
-    <button onclick="myFunction()" class="w3-button w3-black">Hello, {{user.get_username}} , Welcome</button>
-    <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom ">
-    <div class="w3-card-4 w3-dark-grey" style="width:135%">
-
-    <div class="w3-container w3-center"><br>
-      <img src="{{ '/static/Images/avatar.svg'}}" alt="Avatar" style="width:50%">
-      <h5>{{User.get_username}}</h5>
-
-      <div class="w3-section">
-        <button class="w3-button w3-green">Create Profile</button>
-        <a href="logout"><button class="w3-button w3-red">logout</button></a>
-
-      </div>
-    </div>
-
-  </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<script>
-function myFunction() {
-  var x = document.getElementById("Demo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
-<div class="w3-sidebar dm-sidebar w3-cyan w3-bar-block w3-collapse w3-card w3-animate-left" style="width:300px;" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large w3-hide-large w3-purple w3-hover-pink" onclick="w3_close()">Close &times;</button>
-  
-
-
-
-
-    <div class="w3-container w3-center dm-cont-pc"><br>
-      <img src="{{ '/static/Images/avatar.svg'}}" alt="Avatar" style="width:75%">
-      <h5>{{User.get_username}}</h5>
-
-      <div class="w3-section">
-        <button class="w3-button w3-green">Create Profile</button>
-        <button class="w3-button w3-green">View Profile</button>
-        <button class="w3-button w3-blue">Edit Profile</button> <br><br>
-        <a href="logout"><button class="w3-button w3-red">logout</button></a>
-
-      </div>
-    </div>
-
-<a href="/" class="a w3-bar-item w3-button btn"><i class="i fas fa-home"></i> Home </a>
-
-<button class="a `w3-button w3-block w3-left-align btn" onclick="myAccFunc()">
-<i class="i fas fa-users-cog"></i>
-        Use As a.... <i class="i fa fa-caret-down"></i>
-  </button>
-  <div id="demoAcc" class="w3-hide w3-white w3-card">
-    <a href="patients" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-procedures"></i>Patients</a>
-    <a href="doctor" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-md"></i>Doctor</a>
-    <a href="nurse" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-user-nurse"></i>Nurse</a>
-    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-ambulance"></i>Ambulance</a>
-    <a href="#" class="dm-hover w3-bar-item w3-button"><i class="i fas fa-hospital"></i>Hospital</a>
-
-  </div>
-
-
-  <a href="#" class="a w3-bar-item w3-button btn"><i class="i fas fa-id-card"></i> Contact Information </a>
-  <a href="#" class="a w3-bar-item w3-button btn"><i class="i fas fa-atlas"></i> About </a>
-</div>
-
-<div class="w3-main" style="margin-left:300px">
-<div class="w3-teal dm-home">
-  <button class="w3-button w3-teal w3-xlarge w3-hide-large dm-home" onclick="w3_open()">&#9776;</button>
-
-  <div class="w3-container dm-container">
-    <h1 class="dm-h1">DoctorMirror</h1>
-  </div>
-</div>
-
-
-<div class="w3-container" >
-  <div class ="dm_desktop_margin">
+{% block content %}
 <!---------------------------------: Content :---------------------------------------------------------->
 <style>
 label,h6{
@@ -120,49 +12,8 @@ label,h6{
 ::marker,li{
     color:red;
 }
-#id_Kind_of_Treatment_Can_Do{
-    display:none;
-}
+
 </style>
-
-{% for i in obj_list %}
- {% if user.get_username == i.username %}
-<div class="card" style="max-width: 30rem;">
-  <img class="card-img-top" src="{{i.Upload_Profile_Pic.image.url }}" alt="img.jpg">
-  <div class="card-body ">
-    <h6 class="card-title"><span style="color:green">Doctor's Name :</span ><span style="color:blue"> {{ user.get_full_name }}</span ></h6>
-    <h6 class="card-title"><span style="color:green">Passing From College :</span ><span style="color:blue"> {{ i.collage }}</span ></h6>
-    <h6 class="card-title"><span style="color:green">Passing From university:</span ><span style="color:blue"> {{ i.university }}</span ></h6>
-    <h6 class="card-title"><span style="color:green">Passing Year:</span ><span style="color:blue"> {{ i.Passing_Year }}</span ></h6>
-    <h6 class="card-title"><span style="color:green">Degrees:</span ><span style="color:blue"> {{ i.Degrees }}</span ></h6>
-    <h6 class="card-title"><span style="color:green">Experience</span ><span style="color:blue"> {{ i.Experience }}</span ></h6>
-    {% if Hospital_or_Chamber_Address_2%}
-    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 1</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_1 }}</span ></h6>
-    {% else %}
-    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_1 }}</span ></h6>
-    {% endif %}
-
-    {% if Hospital_or_Chamber_Address_2%}
-    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 2</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_2 }}</span ></h6>
-    {% endif %}
-
-    {% if Hospital_or_Chamber_Address_3%}
-    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 3</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_3 }}</span ></h6>
-    {% endif %}
-
-    {% if Hospital_or_Chamber_Address_4 %}
-    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 4</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_4 }}</span ></h6>
-    {% endif %}
-
-    {% if Hospital_or_Chamber_Address_5 %}
-    <h6 class="card-title"><span style="color:green">Hospital or Chamber Address 5</span ><span style="color:blue"> {{ i.Hospital_or_Chamber_Address_5 }}</span ></h6>
-    {% endif %}
-    <h6 class="card-title"><span style="color:green">Specialist of</span ><span style="color:blue"> {{ i.Specialist_of }}</span ></h6>
-    <br><a href="#" class="btn btn-primary w3-right">Edit</a>
-    </div>
-    </div>
-
-{% else %}
 
 <div class="form-group">
 <h6>Full Name:</h6>
@@ -172,29 +23,6 @@ label,h6{
 {{ form.as_p}}
 <button type="submit" class="w3-button w3-blue" name="username" value ="{{user.get_username}}">Submit</button>
 </form>
- {% endif %}
-{% endfor %}
 
 <!----------------------------------------: Content Finish :------------------------------------------>
-</div>
-   
-</div>
-
-<script>
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
-
-{% else %}
-<meta http-equiv="refresh" content="0;url=login">
-
-{% endif %}
-
-
-</body>
-</html>
+{% endblock %}
