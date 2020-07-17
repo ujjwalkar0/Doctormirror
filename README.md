@@ -8,10 +8,10 @@ Its's often happen that in unknown place people are not known about doctors,hosp
 It will help the user to connect to doctor if he/she has some physical health problems.List of nearby Hospitals, Doctor, Ambulances will shown.  If doctor feels, after seeing problems, that if he can give medicine then he can send medicine names ,or if he feels the patient must be admitted or comes to doctor , then he this messages to the patient. The hospital which are willing to take the patient will send to the patient
 
 
-### How to access 
+### To see the webpage 
 
 Go to https://doctormirror.herokuapp.com
 
-1. You see a login page
-2. Signup if you already not loged in
-3. After Login in first page you see a list where you have asked your problem
+
+##### Note
+You have to sign up and than login, to access site. Images are not shown, I don't know why. It show when i run in local
