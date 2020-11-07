@@ -1,1 +1,1 @@
-web: gunicorn accounts.wsgi
+web: gunicorn Doctormirror.wsgi
