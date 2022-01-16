@@ -24,7 +24,7 @@ def login(request):
             messages.info(request, 'Login Invalid')
             return redirect('/')
     else:
-        return render(request, "login.html")
+        return render(request, "login.html", {'ip':get_client_ip(request)[0]})
 def register(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
