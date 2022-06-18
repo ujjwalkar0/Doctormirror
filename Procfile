@@ -1,1 +1,1 @@
-web: gunicorn Doctormirror.wsgi
+web: gunicorn Doctormirror.wsgi --log-file -

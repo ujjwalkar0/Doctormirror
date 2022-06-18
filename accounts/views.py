@@ -3,14 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import doctorresponse,problems,usercatagory,ambulances,location,doctors,file2links,nurses,hospital,chats
 from .forms import ProblemsForm,Patients,Doctor,Nurse,Ambulance,Hospital,file2link,chat
-from ipware import get_client_ip
 
 def login(request):
-    print(f'''
-    
-    Client's Ip address is: {get_client_ip(request)}
-    
-    ''')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -24,7 +18,7 @@ def login(request):
             messages.info(request, 'Login Invalid')
             return redirect('/')
     else:
-        return render(request, "login.html", {'ip':get_client_ip(request)[0]})
+        return render(request, "login.html")
 def register(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
