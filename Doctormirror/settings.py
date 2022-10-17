@@ -25,7 +25,7 @@ SECRET_KEY = 'dx3yt7(u0+(8%e=!&)$ej7&&pb!vkdn8ur+ii4@&7-j!%z#%t_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['doctormirror.herokuapp.com']
+ALLOWED_HOSTS = ['doctormirror.herokuapp.com', '127.0.0.1']
 
 # Application definition
 

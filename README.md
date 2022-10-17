@@ -1,17 +1,31 @@
 
 # Doctormirror | Prototype
 
-### Problem Statement
-Its's often happen that in unknown place people are not known about doctors,hospitals,ambulances. And also it also seen that in a hospital when patient go then their beds are not available, doctor of that diseases not available. In this time of nobel corona it is important for people to know that which Hospital can help him which not. Sometimes patient can not contact ambulance. For some bedrest person nurses are required. But we can't find it.
+## Abstract
 
-### Brief description of the idea.
-It will help the user to connect to doctor if he/she has some physical health problems.List of nearby Hospitals, Doctor, Ambulances will shown.  If doctor feels, after seeing problems, that if he can give medicine then he can send medicine names ,or if he feels the patient must be admitted or comes to doctor , then he this messages to the patient. The hospital which are willing to take the patient will send to the patient
+People are often unaware of doctors, hospitals, or ambulances in unknown places. Furthermore, when patients arrive in a hospital, their beds are not available, and the doctors they need are also unavailable. Now that Nobel Corona is in full swing, people need to know which hospitals can serve him and which cannot. An ambulance may not be able to reach the patient in some cases. Nursing care is required for some bedridden patients. We are proposing a website where medical services such as hospitals, doctors, nurses, ambulances, and patents can be found using their area codes. The website will assist the user in getting in touch with a doctor if they are experiencing physical health issues. There is a list of nearby hospitals, doctors, and ambulances. After seeing a patient's problem, a doctor may decide to prescribe medicine, or he may decide to admit the patient or tell the patient to come into the chamber in a message.
+
+## Introduction
+
+The web application will revolutionize the way medical services are contacted. Users will be able to locate doctors, hospitals, nurses, and ambulances if they have physical health issues. He will let the patient know if he feels the patient needs to be admitted or see a doctor. If he feels he can provide medication, he will provide the names of the medications. The patient can pay him online. The hospital that is willing to take the patient will send that
 
 
-### To see the webpage 
+## Workflow
+
+### Step 1: Doctor or Patient or Nurse or Ambulance or Hospital have to register
+
+![image](https://user-images.githubusercontent.com/55041104/196102749-c3ef6435-bccc-4ac0-b956-fb2f41135216.png)
+
+### Step 2: Doctor or Patient or Nurse or Ambulance or Hospital have to login
+
+![image](https://user-images.githubusercontent.com/55041104/196103313-1168f0b8-ca7b-4de8-9e0c-8109b4f73b45.png)
+
 
 Go to https://doctormirror.herokuapp.com
 
 
 ##### Note
 You have to sign up and than login, to access site. Images are not shown, I don't know why. It show when i run in local
+
+
+
