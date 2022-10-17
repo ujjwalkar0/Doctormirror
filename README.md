@@ -25,14 +25,15 @@ The web application will revolutionize the way medical services are contacted. U
 
 ### Step 2: Setup your profile.
 
-<p align="center">Our Users</p>
-<div>
+### <p align="center">Our Users</p>
 
-<img width="410px" src="https://user-images.githubusercontent.com/55041104/196155261-90db076c-b198-4469-af56-efbd3e0c3960.png"/>
+<center>
 
-<img width="410px" style="float:right" src="https://user-images.githubusercontent.com/55041104/196154883-22143bb9-6709-4db4-8910-b061a0f2dee3.png"/>
+![image](https://user-images.githubusercontent.com/55041104/196156381-0c026e88-de28-4178-b452-e8d4699190ef.png)
 
-</div>
+</center>
+
+
 <!--
 
 Go to https://doctormirror.herokuapp.com
