@@ -16,15 +16,24 @@ The web application will revolutionize the way medical services are contacted. U
 
 <div>
 
-<img width="410px" src="https://user-images.githubusercontent.com/55041104/196102749-c3ef6435-bccc-4ac0-b956-fb2f41135216.png">
+<img width="410px" src="https://user-images.githubusercontent.com/55041104/196102749-c3ef6435-bccc-4ac0-b956-fb2f41135216.png"/>
 
-<img width="410px" style="float:right" src="https://user-images.githubusercontent.com/55041104/196103313-1168f0b8-ca7b-4de8-9e0c-8109b4f73b45.png">
+<img width="410px" style="float:right" src="https://user-images.githubusercontent.com/55041104/196103313-1168f0b8-ca7b-4de8-9e0c-8109b4f73b45.png"/>
 
 </div>
 
-<!-- ### Step 2: Doctor or Patient or Nurse or Ambulance or Hospital have to login
 
+### Step 2: Setup your profile.
 
+<p align="center">Our Users</p>
+<div>
+
+<img width="410px" src="https://user-images.githubusercontent.com/55041104/196155261-90db076c-b198-4469-af56-efbd3e0c3960.png"/>
+
+<img width="410px" style="float:right" src="https://user-images.githubusercontent.com/55041104/196154883-22143bb9-6709-4db4-8910-b061a0f2dee3.png"/>
+
+</div>
+<!--
 
 Go to https://doctormirror.herokuapp.com
 
