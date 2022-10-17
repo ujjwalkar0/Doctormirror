@@ -51,8 +51,30 @@ Let, you are looking for a Doctor. So, click Looking for a Doctor. And your addr
 ![image](https://user-images.githubusercontent.com/55041104/196186543-74a72961-73bb-4012-a0d4-ae56d596d966.png)
 
 
+### 5. Send patient's problem to doctor
+
+User have to fill up the form with problems and doctor's user id and submit.
+
+![image](https://user-images.githubusercontent.com/55041104/196208823-60cd5dff-9709-45fd-9025-64112bce4fd2.png)
 
 
+### 6. Details will shown on Doctors Notification Section.
+
+Whenever patient send problems, doctor can show them in notifications. After seeing a patient's problem, a doctor may ask the patient to come in chember. If it's possible to in online he will send payment qr code to patient, and after recieving payment he can prescribe him.
+
+![image](https://user-images.githubusercontent.com/55041104/196210200-2e9f0f47-60c0-4e23-a780-901aa8db9daf.png)
+
+
+### 7. Chatting system is build for communication.
+
+User can send message with documents, reports between doctor and patients, doctor and hospitals, hospitals and patients etc.
+
+![image](https://user-images.githubusercontent.com/55041104/196213098-ed2e0cb8-e567-4afd-8029-f0ec66c46636.png)
+
+
+### 8. User can see if doctor have accept or reject or ask him to come in chember.
+
+![image](https://user-images.githubusercontent.com/55041104/196214153-ce42df58-778c-4b19-9d94-446c587e32d7.png)
 
 
 <!--
