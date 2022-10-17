@@ -16,13 +16,13 @@ The web application will revolutionize the way medical services are contacted. U
 
 <div>
 
-<img src="https://user-images.githubusercontent.com/55041104/196102749-c3ef6435-bccc-4ac0-b956-fb2f41135216.png">
+<img width="500px" src="https://user-images.githubusercontent.com/55041104/196102749-c3ef6435-bccc-4ac0-b956-fb2f41135216.png">
 
-<img style="float:right" src="https://user-images.githubusercontent.com/55041104/196103313-1168f0b8-ca7b-4de8-9e0c-8109b4f73b45.png">
+<img width="500px" style="float:right" src="https://user-images.githubusercontent.com/55041104/196103313-1168f0b8-ca7b-4de8-9e0c-8109b4f73b45.png">
 
 </div>
 
-### Step 2: Doctor or Patient or Nurse or Ambulance or Hospital have to login
+<!-- ### Step 2: Doctor or Patient or Nurse or Ambulance or Hospital have to login
 
 
 
@@ -33,4 +33,4 @@ Go to https://doctormirror.herokuapp.com
 You have to sign up and than login, to access site. Images are not shown, I don't know why. It show when i run in local
 
 
-
+ -->
