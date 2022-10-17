@@ -33,7 +33,9 @@ The web application will revolutionize the way medical services are contacted. U
 
 <center>
 
-![image](https://user-images.githubusercontent.com/55041104/196156381-0c026e88-de28-4178-b452-e8d4699190ef.png)
+<!-- ![image](https://user-images.githubusercontent.com/55041104/196156381-0c026e88-de28-4178-b452-e8d4699190ef.png) -->
+
+<img src="https://user-images.githubusercontent.com/55041104/196156381-0c026e88-de28-4178-b452-e8d4699190ef.png" style="width:100%">
 
 
 ### 3. Register Yourself as Doctor, Patient, Ambulance, Hospitals
@@ -55,7 +57,9 @@ Let, you are looking for a Doctor. So, click Looking for a Doctor. And your addr
 
 User have to fill up the form with problems and doctor's user id and submit.
 
-![image](https://user-images.githubusercontent.com/55041104/196208823-60cd5dff-9709-45fd-9025-64112bce4fd2.png)
+<img src="https://user-images.githubusercontent.com/55041104/196208823-60cd5dff-9709-45fd-9025-64112bce4fd2.png" style="width:100%">
+
+<!-- ![image](https://user-images.githubusercontent.com/55041104/196208823-60cd5dff-9709-45fd-9025-64112bce4fd2.png) -->
 
 
 ### 6. Details will shown on Doctors Notification Section.
