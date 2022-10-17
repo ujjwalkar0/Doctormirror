@@ -9,6 +9,18 @@ People are often unaware of doctors, hospitals, or ambulances in unknown places.
 
 The web application will revolutionize the way medical services are contacted. Users will be able to locate doctors, hospitals, nurses, and ambulances if they have physical health issues. He will let the patient know if he feels the patient needs to be admitted or see a doctor. If he feels he can provide medication, he will provide the names of the medications. The patient can pay him online. The hospital that is willing to take the patient will send that
 
+## Application Area
+
+* The purpose of  our system is to spread awareness of different diseases and illness.
+* Doctors and Patients both can login to our webapp by simply providing the necessary details.
+* It also helps to connect essential health services to the people.
+* The system  shares best practices and advisories augmented by higher authorities for instant Medical help.
+* It allows users to manage their health information and connect to their Doctors.
+* With this application you can find the nearest ambulance  on the click of Ambulance feature.
+* Also, we can  find the availability of different ambulances and book the suitable one.
+* As our system is easy to use, so further in future, we can reach out to mass people and help them.
+
+
 
 ## Workflow
 
@@ -81,13 +93,6 @@ User can send message with documents, reports between doctor and patients, docto
 ![image](https://user-images.githubusercontent.com/55041104/196214153-ce42df58-778c-4b19-9d94-446c587e32d7.png)
 
 
-<!--
+## Conclusion
 
-Go to https://doctormirror.herokuapp.com
-
-
-##### Note
-You have to sign up and than login, to access site. Images are not shown, I don't know why. It show when i run in local
-
-
- -->
+This project was developed as part of the Future Proof Hackathon in June 2020. The hackathon lasted three days, during which I pitched that idea with my team to evaluators depending on the circumstances. They suggested a number of things that we implemented. My team did the research behind the idea, and I implemented the website.
