@@ -12,7 +12,7 @@ The web application will revolutionize the way medical services are contacted. U
 
 ## Workflow
 
-### Doctor or Patient or Nurse or Ambulance or Hospital have to register
+### 1. Doctor or Patient or Nurse or Ambulance or Hospital have to register
 
 <div>
 
@@ -20,24 +20,27 @@ The web application will revolutionize the way medical services are contacted. U
 
 <img width="410px" style="float:right" src="https://user-images.githubusercontent.com/55041104/196103313-1168f0b8-ca7b-4de8-9e0c-8109b4f73b45.png"/>
 
+![image](https://user-images.githubusercontent.com/55041104/196165341-978d06a3-d6ce-40e8-9985-3666443314bb.png)
+
+
 </div>
 
 
-### Our Users: A single user can use our website as doctor, patient, ambulance, hospitals etc.
+### 2. Our Users: A single user can use our website as doctor, patient, ambulance, hospitals etc.
 
 <center>
 
 ![image](https://user-images.githubusercontent.com/55041104/196156381-0c026e88-de28-4178-b452-e8d4699190ef.png)
 
 
-#### Register Yourself as Doctor, Patient, Ambulance, Hospitals
+### 3. Register Yourself as Doctor, Patient, Ambulance, Hospitals
 
 ![image](https://user-images.githubusercontent.com/55041104/196159755-7a9d8348-5a9f-4d63-b4b0-f54529e7f936.png)
 
 
 </center>
 
-
+### 4. Search whom are you looking for
 
 
 
